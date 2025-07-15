@@ -1,0 +1,29 @@
+🔧 Setup & Initialization
+Imports required modules: time for delays and machine for hardware control.
+Sets up UART communication on interface 1 with baud rate 115200 using GPIO 17 (TX) and GPIO 16 (RX).
+Configures GPIO 5 as an output pin to control the door locking mechanism.
+
+🔓 Functions
+unlock_door():
+Sets the door lock pin to LOW (value(0)), unlocking the door.
+Prints “Door unlocked” and sends 'UNLOCKED\n' over UART.
+
+lock_door():
+Sets the pin to HIGH (value(1)), locking the door.
+Prints “Door locked” and sends 'LOCKED\n' over UART.
+
+🎯 Main Loop Logic
+Starts with door in a locked state.
+Continuously checks for incoming data via UART.
+Decodes received message and matches it with predefined commands:
+
+If 'UNLOCK' is received → triggers unlock_door().
+
+If 'LOCK' is received → triggers lock_door().
+
+Waits 1 second (time.sleep(1)) in each loop to reduce CPU load.
+
+📌 Purpose of the Code
+Provides a simple remote door control system via UART commands.
+Uses ESP32 to interface with hardware (relay/electronic lock).
+Enables external device (e.g. mobile app, PC, another microcontroller) to control the lock by sending 'LOCK' or 'UNLOCK'.
