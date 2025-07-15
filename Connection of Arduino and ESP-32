@@ -1,0 +1,21 @@
+ To connect the ESP32 board using Arduino IDE:
+1. Install the ESP32 board support in Arduino IDE:
+    - Go to File > Preferences.
+    - In the "Additional Board Manager URLs" field, add:
+      `https://dl.espressif.com/dl/package_esp32_index.json`
+    - Go to Tools > Board > Board Manager, search for "ESP32" and install it.
+2. Select the ESP32 board:
+    - Go to Tools > Board and select your specific ESP32 board model.
+3. Connect the ESP32 to your computer via USB.
+4. Select the correct port:
+    - Go to Tools > Port and select the port corresponding to your ESP32.
+5. Copy the provided code into a new sketch in Arduino IDE.
+6. Upload the sketch to the ESP32:
+    - Click the upload button (right arrow icon) in the Arduino IDE.
+7. Open the Serial Monitor (Ctrl + Shift + M) to view the output and interact with the ESP32.
+8. Ensure the baud rate in the Serial Monitor matches the one set in the code (115200).
+9. You can now send commands to unlock or lock the door by typing 'UNLOCK' or 'LOCK' in the Serial Monitor.
+
+
+Make sure to connect the TX and RX pins of the ESP32 to the corresponding pins on your Arduino or other microcontroller.
+Ensure that the pins used for UART communication (tx and rx) are correctly connected to the ESP32.
